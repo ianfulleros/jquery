@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<h1> What jQuery Can do?</h1>
+	<p class="hidetext">ewqeqw</p>
+	<p class="hidetext">ewqeqw</p>
+	<p class="hidetext">ewqeqw</p>
+	<p class="hidetext">ewqeqw</p>	
+	<p class="hidetext">ewqeqw</p>
+
+	<button id="hidename">Hide This button</button>
+	<button id="showme">Show This button</button>
+	<button id="toggleme">Toggle Me</button>
+
+	<div id="myDiv">
+		<h2 id="myText">jQuery can change HTML content</h2>
+		<button id="changeContent">
+			Click Me 
+		</button>
+		
+		<br>
+		<br>
+
+		<h2>jQuery can change html attributes</h2>
+
+		<button id="changeImage">Change my Image</button>
+		<button id="changeHeight">Change imageHeight</button>
+		<br>
+		<img src="t1-1.jpg" id="myImage">
+
+		<br>
+		<h2 id="changeC">jQuery can change style css</h2>
+		<button id="changeColor">Click me</button>
+
+		<br>
+
+		<h2>jQuery can have operators</h2>
+		<label>First Number:</label>
+		<input type="number" name="submit" id="num1">
+		<label>Second Number:</label>
+		<input type="number" name="submit2" id="num2">
+		<input type="text" id="result" disabled>
+		<button id="getSum">Sum</button>
+		<button id="getSubtract">Subtract</button>
+		<button id="getProduct">Multiplication</button>
+		<button id="getQuotient">Divide</button>
+
+	</div>
+
+	<script type = "text/javascript">
+
+	$(document).ready(function(){
+
+		//hideText
+		$('#hidename').click(function(){
+			$('.hidetext').hide();
+			// $(this).hide() -> if you want target the current id
+		});
+
+		//showText
+		$('#showme').click(function(){
+			$('.hidetext').show();
+		});
+		//toggle
+		$('#toggleme').click(function(){
+			$('#myDiv').toggle();
+		});
+
+		//changeContent
+		$('#changeContent').click(function(){
+			$('#myText').html("ewqewq");
+		});
+
+		//changeImage/changeImageHeight
+
+		$('#changeImage').click(function(){
+			$('#myImage').attr('src', 'download.jpg');
+		});
+
+		$('#changeHeight').click(function(){
+			$('#myImage').attr('height','300px');
+		});
+
+
+		// changeColor
+		$('#changeColor').click(function(){
+			$('#changeC').css('color','red');
+		});
+
+
+		// Addition / Subtraction / Multiplication / Division
+
+		$('#getSum').click(function(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+
+			$('#result').val(num1+num2);
+		});
+
+		$('#getSubtract').click(function(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+
+			$('#result').val(num1-num2);
+		});
+		$('#getProduct').click(function(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+
+			$('#result').val(num1*num2);
+		});
+		$('#getQuotient').click(function(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+
+			$('#result').val(num1/num2);
+		});
+
+
+
+
+
+	}); //end
+	</script>
+
+
+
+</body>
+</html>
